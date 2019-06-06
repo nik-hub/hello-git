@@ -4,7 +4,7 @@
 > OS : Linux \
 > Objet : automatiser et sécuriser l'autentification à GitHub via SSH
 ```
-cd ~/.ssh
+cd && mkdir .ssh && cd .ssh
 ssh-keygen -t rsa -b 4096 -C "user@mail.fr"
 ```
 Deux fichiers sont créés :
