@@ -7,7 +7,7 @@
 cd && mkdir .ssh && cd .ssh
 ssh-keygen -t rsa -b 4096 -C "user@mail.fr"
 ```
-Deux fichiers sont créés :
+Deux fichiers sont créés dans \$HOME/.ssh :
 - id_rsa : la clé privée
 - id_rsa.pub : la clé publique
 ```
