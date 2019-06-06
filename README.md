@@ -21,7 +21,7 @@ cat id_rsa.pub
  # Ajouter la clé privée à l'agent de gestion des connexions SSH
  ssh-add ~/.ssh/id_rsa
  ```
-On peut alors redescendre un repository Git depuis GitHub via une commande du type :
+On peut alors sans avoir à fournir de user/pass redescendre un repository Git depuis GitHub via une commande du type :
 ```
 git clone git@github.com:user/monrepo.git
 ```
