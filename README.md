@@ -13,7 +13,7 @@ Deux fichiers sont créés dans \$HOME/.ssh :
 ```
 cat id_rsa.pub
 ```
- Résultat à copier/coller sur GitHub section Settings / SSH and GPG Keys / New SSH key. \
+ Résultat à copier/coller sur GitHub section Settings / SSH and GPG Keys / New SSH key.
  > https://github.com/settings/keys
  ```
  # Contrôler si l'agent ssh est en cours d'exécution :
