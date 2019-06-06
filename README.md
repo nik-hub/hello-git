@@ -26,3 +26,4 @@ On peut alors sans avoir à fournir de user/pass redescendre un de ses propres r
 git clone git@github.com:user/monrepo.git
 ```
 et surtout alimenter (push) ses repositories sans avoir à fournir de login/passwd !
+> Plus d'infos : https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account
