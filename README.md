@@ -1,5 +1,5 @@
 # Tips Git
-## 1. ssh
+## 1. SSH
 > Repository : github \
 > OS : Linux \
 > Objet : automatiser et sécuriser l'autentification à GitHub via SSH
