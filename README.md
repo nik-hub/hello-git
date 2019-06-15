@@ -1,5 +1,12 @@
 # Tips Git
-## 1. SSH
+## 1. Install
+```
+apt-get install git
+git config --global user.name <user_git>
+git config --global user.email <user_mail>
+git config --global push.default matching
+```
+## 2. SSH
 > Repository : github \
 > OS : Linux \
 > Objet : automatiser et sécuriser l'autentification à GitHub via SSH
