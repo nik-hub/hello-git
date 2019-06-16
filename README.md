@@ -40,3 +40,20 @@ git push origin master
 ```
 
 > Plus d'infos : https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account
+
+## 3. Environnement de développement
+
+Astuce sympa pour faire apparaître la branche courante dans le prompt sous Linux Debian et dérivés (Mint...) \
+(A adapter pour les types RHEL/CentOS) \
+Code à ajouter dans le .bashrc par exemple :
+```
+function getbranch () {
+	if [[ -d .git ]]; then
+		echo "[$(git symbolic-ref HEAD --short)] "
+	else
+		echo ""
+	fi
+}
+
+export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$(getbranch)\$\[\033[00m\]"
+```
