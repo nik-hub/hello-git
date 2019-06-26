@@ -1,12 +1,16 @@
 # Tips Git
+
 ## 1. Install
+
 ```
 apt-get install git
 git config --global user.name <user_git>
 git config --global user.email <user_mail>
 git config --global push.default matching
 ```
+
 ## 2. SSH
+
 > Repository : github \
 > OS : Linux \
 > Objet : automatiser et sécuriser l'autentification à GitHub via SSH
@@ -57,5 +61,7 @@ function getbranch () {
 
 export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$(getbranch)\$\[\033[00m\]"
 ```
+
 ## 4. Gestion de projets
+
 > https://services.renater.fr/sourcesup/formation/chap04
