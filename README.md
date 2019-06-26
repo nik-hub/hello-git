@@ -62,6 +62,13 @@ function getbranch () {
 export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$(getbranch)\$\[\033[00m\]"
 ```
 
-## 4. Gestion de projets
+## 4. Commandes courantes
+### a. Gestion d'une branche différenciée (demande de fusion...)
+```bash
+git remote add mabranche https://github.com/nik-hub/mon_repository/mabranche/
+git push mabranche
+```
+
+## 5. Gestion de projets
 
 > https://services.renater.fr/sourcesup/formation/chap04
