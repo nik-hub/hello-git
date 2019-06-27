@@ -1,9 +1,7 @@
 # Tips Git
 
-```
 Ce README est un condensé d'informations techniques et pratiques, ayant pour objectif de présenter les actions les plus courantes dans l'utilisation de GitHub, et plus largement de Git, afin que chacun puisse rapidement appréhender la mise en oeuvre et la gestion de son propre dépôt Git.
 **Remarque** : nous travaillons ici sous **Linux**, il faudra adapter quelques commandes pour travailler sous un environnement Windows ou MacOS.
-```
 
 ## 1. Installation Linux
 
