@@ -1,9 +1,11 @@
 # Tips Git
 
-## 1. Install
+## 1. Installation Linux
 
 ```
 apt-get install git
+yum install git
+
 git config --global user.name <user_git>
 git config --global user.email <user_mail>
 git config --global push.default matching
