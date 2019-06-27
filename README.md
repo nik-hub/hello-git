@@ -63,7 +63,41 @@ export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]
 ```
 
 ## 4. Commandes courantes
-### a. Gestion d'une branche différenciée (demande de fusion...)
+
+### a. Command line instructions
+```
+Git global setup
+
+git config --global user.name "Nicolas CERNIK"
+git config --global user.email "nicolas.cernik@ca-gip.fr"
+
+Create a new repository
+
+git clone ssh://git@gitlab.assurances.group.gca:922/EMC/images-docker.git
+cd images-docker
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+Existing folder
+
+cd existing_folder
+git init
+git remote add origin ssh://git@gitlab.assurances.group.gca:922/EMC/images-docker.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+
+Existing Git repository
+
+cd existing_repo
+git remote add origin ssh://git@gitlab.assurances.group.gca:922/EMC/images-docker.git
+git push -u origin --all
+git push -u origin --tags
+```
+
+### b. Gestion d'une branche différenciée (demande de fusion...)
 ```bash
 git remote add mabranche https://github.com/nik-hub/mon_repository/mabranche/
 git push mabranche
