@@ -26,7 +26,7 @@ $ ssh-keygen -t rsa -b 4096 -C "user@mail.fr"
 ```
 Deux fichiers sont créés dans \$HOME/.ssh :
 - id_rsa : la clé privée
-- id_rsa.pub : la clé publique
+- id_rsa.pub : la clé publique \
 Editer la clé publique :
 ```
 $ cat id_rsa.pub
