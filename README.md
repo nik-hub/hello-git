@@ -1,32 +1,35 @@
 # Tips Git
 
-Ce README est un condensé d'informations techniques et pratiques, ayant pour objectif de présenter les actions les plus courantes dans l'utilisation de GitHub, et plus largement de Git, afin que chacun puisse rapidement appréhender la mise en oeuvre et la gestion de son propre dépôt Git.
+Ce README est un condensé d'informations techniques et pratiques, ayant pour objectif de présenter les actions les plus courantes dans l'utilisation de GitHub, et plus largement de Git, afin que chacun puisse rapidement appréhender la mise en oeuvre et la gestion de son propre dépôt Git. \
 **Remarque** : nous travaillons ici sous **Linux**, il faudra adapter quelques commandes pour travailler sous un environnement Windows ou MacOS.
 
-## 1. Installation Linux
+## 1. Installation Git sous Linux
 
 > Objet : installer git sous Linux
 ```
-apt-get install git
-yum install git
+# Pour les Linux dérivés de Debian
+$ apt-get install git
+# Pour les Linux dérivés de RedHat
+$ yum install git
 
-git config --global user.name <user_git>
-git config --global user.email <user_mail>
-git config --global push.default matching
+$ git config --global user.name <user_git>
+$ git config --global user.email <user_mail>
+$ git config --global push.default matching
 ```
 
-## 2. SSH
+## 2. Configuration des clés SSH
 
 > Objet : automatiser et sécuriser l'autentification à GitHub via SSH
 ```
-cd && mkdir .ssh && cd .ssh
-ssh-keygen -t rsa -b 4096 -C "user@mail.fr"
+$ cd && mkdir .ssh && cd .ssh
+$ ssh-keygen -t rsa -b 4096 -C "user@mail.fr"
 ```
 Deux fichiers sont créés dans \$HOME/.ssh :
 - id_rsa : la clé privée
 - id_rsa.pub : la clé publique
+Editer la clé publique :
 ```
-cat id_rsa.pub
+$ cat id_rsa.pub
 ```
  Résultat à copier/coller sur GitHub section Settings / SSH and GPG Keys / New SSH key.
  > https://github.com/settings/keys
