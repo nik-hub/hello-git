@@ -6,7 +6,7 @@ Ce README est un condensé d'informations techniques et pratiques, ayant pour ob
 ## 1. Installation Git sous Linux
 
 > Objet : installer git sous Linux
-```
+```bash
 # Pour les Linux dérivés de Debian
 $ apt-get install git
 # Pour les Linux dérivés de RedHat
@@ -20,15 +20,16 @@ $ git config --global push.default matching
 ## 2. Configuration des clés SSH
 
 > Objet : automatiser et sécuriser l'autentification à GitHub via SSH
-```
+```bash
 $ cd && mkdir .ssh && cd .ssh
 $ ssh-keygen -t rsa -b 4096 -C "user@mail.fr"
 ```
 Deux fichiers sont créés dans \$HOME/.ssh :
 - id_rsa : la clé privée
-- id_rsa.pub : la clé publique \
+- id_rsa.pub : la clé publique
+
 Editer la clé publique :
-```
+```bash
 $ cat id_rsa.pub
 ```
  Résultat à copier/coller sur GitHub section Settings / SSH and GPG Keys / New SSH key.
