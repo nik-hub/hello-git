@@ -8,7 +8,7 @@ Ce README est un condensé d'informations techniques et pratiques, ayant pour ob
 > Objet : installer git sous Linux
 ```bash
 # Pour les Linux dérivés de Debian
-$ apt-get install git
+apt-get install git
 # Pour les Linux dérivés de RedHat
 $ yum install git
 
