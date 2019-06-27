@@ -64,16 +64,16 @@ export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]
 
 ## 4. Commandes courantes
 
-### a. Command line instructions
+### a. Command line instructions with SSH
 ```
 Git global setup
 
-git config --global user.name "Nicolas CERNIK"
-git config --global user.email "nicolas.cernik@ca-gip.fr"
+git config --global user.name "My Name"
+git config --global user.email "my.name@foo.fr"
 
 Create a new repository
 
-git clone ssh://git@gitlab.assurances.group.gca:922/EMC/images-docker.git
+git clone ssh://git@gitlab.mongitlab.fr:922/groupe/projet.git
 cd images-docker
 touch README.md
 git add README.md
@@ -84,7 +84,7 @@ Existing folder
 
 cd existing_folder
 git init
-git remote add origin ssh://git@gitlab.assurances.group.gca:922/EMC/images-docker.git
+git remote add origin ssh://git@gitlab.mongitlab.fr:922/groupe/projet.git
 git add .
 git commit -m "Initial commit"
 git push -u origin master
@@ -92,7 +92,7 @@ git push -u origin master
 Existing Git repository
 
 cd existing_repo
-git remote add origin ssh://git@gitlab.assurances.group.gca:922/EMC/images-docker.git
+git remote add origin ssh://git@gitlab.mongitlab.fr:922/groupe/projet.git
 git push -u origin --all
 git push -u origin --tags
 ```
