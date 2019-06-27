@@ -33,6 +33,9 @@ cat id_rsa.pub
  eval "$(ssh-agent -s)"
  # Ajouter la clé privée à l'agent de gestion des connexions SSH
  ssh-add ~/.ssh/id_rsa
+ # Lister les clés enregistrées
+ ssh-add -l
+ ssh-add -L
  ```
 On peut alors sans avoir à fournir de user/pass redescendre un de ses propres repositories Git depuis GitHub via une commande du type :
 ```
