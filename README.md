@@ -42,6 +42,9 @@ $ cat id_rsa.pub
  # Lister les clés enregistrées
  ssh-add -l
  ssh-add -L
+ 
+ # Test d'une authentification ssh
+ ssh -vT git@github.com
  ```
 On peut alors sans avoir à fournir de user/pass redescendre un de ses propres repositories Git depuis GitHub via une commande du type :
 ```
