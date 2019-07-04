@@ -113,8 +113,8 @@ git push -u origin --tags
 
 ### b. Gestion d'une branche différenciée (demande de fusion...)
 ```bash
-git remote add mabranche https://github.com/nik-hub/mon_repository/mabranche/
-git push mabranche
+git remote add mabranche https://github.com/user/mon_repository/ma_branche/
+git push ma_branche
 ```
 
 ## 5. Gestion de projets
