@@ -52,10 +52,12 @@ git clone git@github.com:user/monrepo.git
 ```
 et surtout alimenter (push) ses repositories sans avoir à fournir de login/passwd. Pour cela il faut d'abord initialiser l'accès au Repository distant :
 ```
-# git remote set-url origin git@github.com:user/monrepo.git
 git remote add origin git@github.com:user/monrepo.git
 git remote show origin
 git push origin master
+
+# Pour modifier à postériori l'url
+git remote set-url origin git@github.com:user/monrepo.git
 ```
 
 > Plus d'infos : https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account
