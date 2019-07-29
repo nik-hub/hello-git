@@ -23,7 +23,16 @@ $ git config --global http.sslVerify "false"
 git config --list
 ```
 
-## 2. Configuration des clés SSH
+## 2. Paramétrage du PROXY
+
+> Objet : utiliser GitHub sous un Proxy (entreprise...)
+```bash
+# Ajouter simplement les exports suivants par exemple dans .bashrc
+export http_proxy=http://ip:port/
+export https_proxy=http://ip:port/
+```
+
+## 3. Configuration des clés SSH
 
 > Objet : automatiser et sécuriser l'autentification à GitHub via SSH
 ```bash
@@ -68,7 +77,7 @@ git remote set-url origin git@github.com:user/monrepo.git
 
 > Plus d'infos : https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account
 
-## 3. Environnement de développement
+## 4. Environnement de développement
 
 Astuce sympa pour faire apparaître la branche courante dans le prompt sous Linux Debian et dérivés (Mint...) \
 (A adapter pour les types RHEL/CentOS) \
@@ -85,7 +94,7 @@ function getbranch () {
 export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$(getbranch)\$\[\033[00m\]"
 ```
 
-## 4. Commandes courantes
+## 5. Commandes courantes
 
 ### a. Command line instructions with SSH
 ```
@@ -126,6 +135,6 @@ git remote add mabranche https://github.com/user/mon_repository/ma_branche/
 git push ma_branche
 ```
 
-## 5. Gestion de projets
+## 6. Gestion de projets
 
 > https://services.renater.fr/sourcesup/formation/chap04
