@@ -15,6 +15,12 @@ $ yum install git
 $ git config --global user.name <user_git>
 $ git config --global user.email <user_mail>
 $ git config --global push.default matching
+
+# Pour passer outre les controles certificats SSL
+$ git config --global http.sslVerify "false"
+
+# Controle de la configuration
+git config --list
 ```
 
 ## 2. Configuration des clés SSH
