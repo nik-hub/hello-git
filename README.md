@@ -94,6 +94,12 @@ function getbranch () {
 export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;35m\]\w \$(getbranch)\$\[\033[00m\]"
 ```
 
+> Quelques URL pour la gestion des couleurs sous Linux : \
+> https://linuxhint.com/ls_colors_bash/ \
+> https://www.tecmint.com/customize-bash-colors-terminal-prompt-linux/ \
+> https://www.linuxtricks.fr/wiki/personnaliser-son-shell-alias-couleurs-bashrc-cshrc
+
+
 ## 5. Commandes courantes
 
 ### a. Command line instructions with SSH
