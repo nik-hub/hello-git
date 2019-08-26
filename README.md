@@ -30,6 +30,11 @@ git config --list
 # Ajouter simplement les exports suivants par exemple dans .bashrc
 export http_proxy=http://ip:port/
 export https_proxy=http://ip:port/
+
+Ou ( cas user/passwd ) :
+
+export http_proxy=http://user:passwd@ip:port/
+export https_proxy=http://user:passwd@ip:port/
 ```
 
 ## 3. Configuration des clés SSH
