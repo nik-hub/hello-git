@@ -41,7 +41,7 @@ export https_proxy=http://user:passwd@ip:port/
 
 > Objet : automatiser et sécuriser l'autentification à GitHub via SSH
 ```bash
-$ cd && mkdir .ssh && cd .ssh
+$ cd && mkdir -m 700 .ssh && cd .ssh
 $ ssh-keygen -t rsa -b 4096 -C "user@mail.fr"
 ```
 Deux fichiers sont créés dans \$HOME/.ssh :
