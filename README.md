@@ -55,7 +55,7 @@ $ cat id_rsa.pub
  Résultat à copier/coller sur GitHub section Settings / SSH and GPG Keys / New SSH key.
  > https://github.com/settings/keys
  
- Ajouter les lignes suivantes dans le .bashrc
+ Ajouter les lignes suivantes dans le .bashrc :
  ```
  # Activer l'agent ssh de gestion des clés :
  eval "$(ssh-agent -s)"
