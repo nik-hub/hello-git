@@ -143,6 +143,10 @@ cd existing_repo
 git remote add origin ssh://git@gitlab.mongitlab.fr:922/groupe/projet.git
 git push -u origin --all
 git push -u origin --tags
+
+git clone $_URL                         : clone un dépôt distant localement
+git clone -c http.sslVerify=false $_URL : clone un dépôt distant distant sans vérification du certificat
+git pull --rebase=preserve              : rècupère la version distante et merge avec la locale
 ```
 
 ### b. Gestion d'une branche différenciée (demande de fusion...)
