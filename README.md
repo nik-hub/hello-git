@@ -147,6 +147,19 @@ git push -u origin --tags
 git clone $_URL                         : clone un dépôt distant localement
 git clone -c http.sslVerify=false $_URL : clone un dépôt distant distant sans vérification du certificat
 git pull --rebase=preserve              : rècupère la version distante et merge avec la locale
+
+Savoir quelle branche est la plus avancée :
+# ordre descendant
+git branch --sort=-committerdate
+# ordre ascendant
+git branch --sort=committerdate
+
+Partager un dépot local en le liant au dépot distant
+git branch --set-upstream-to=origin/master master
+git pull
+git checkout dev
+git branch --set-upstream-to=origin/dev dev
+
 ```
 
 ### b. Gestion d'une branche différenciée (demande de fusion...)
