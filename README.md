@@ -160,6 +160,17 @@ git pull
 git checkout dev
 git branch --set-upstream-to=origin/dev dev
 
+Gestion des tags
+# Listing
+git tag
+git tag -l "v1.*"
+# Tag content
+git show v1.0.4
+# Create tag
+git tag -a v1.0.4 -m "Comment for this 1.0.4 tag"
+# Push
+git push origin v1.0.5
+git push --tags
 ```
 
 ### b. Gestion d'une branche différenciée (demande de fusion...)
