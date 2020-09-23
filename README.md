@@ -154,6 +154,18 @@ git branch --sort=-committerdate
 # ordre ascendant
 git branch --sort=committerdate
 
+Savoir si la branche locale est en déphasage par rapport au dépôt distant
+# Si origin/master est la branche distante
+git fetch origin/master
+# Pour connaître le nombre de commits en retard sur le repo local (info non verbeuse)
+git cherry master origin/master
+# Pour avoir la liste des commits (auteur, message...)
+git log origin/master master
+# Pour connaître le nombre de commits en retard sur le repo distant (info non verbeuse)
+git cherry origin/master master
+# Pour connaître le détail
+git diff master origin/master
+
 Partager un dépot local en le liant au dépot distant
 git branch --set-upstream-to=origin/master master
 git pull
