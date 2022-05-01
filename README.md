@@ -191,6 +191,14 @@ git remote add mabranche https://github.com/user/mon_repository/ma_branche/
 git push ma_branche
 ```
 
+### c. Renommage de la branche main vers master
+```bash
+git branch -m main master
+git fetch origin
+git branch -u origin/master master
+git remote set-head origin -a
+```
+
 ## 6. Gestion de projets
 
 > https://services.renater.fr/sourcesup/formation/chap04
