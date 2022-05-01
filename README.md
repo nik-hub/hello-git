@@ -79,6 +79,7 @@ et surtout alimenter (push) ses repositories sans avoir à fournir de login/pass
 ```
 git remote add origin git@github.com:user/monrepo.git
 git remote show origin
+# Au premier push, il faut obligatoirement taper cette commande, ensuite on peut taper simplement git push
 git push origin master
 
 # Pour modifier à postériori l'url
