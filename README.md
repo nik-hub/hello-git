@@ -113,7 +113,7 @@ export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]
 
 ## 5. Commandes courantes
 
-### a. Command line instructions with SSH
+### a. Command line instructions
 ```
 Git global setup
 
@@ -146,8 +146,8 @@ git push -u origin --all
 git push -u origin --tags
 
 git clone $_URL                         : clone un dépôt distant localement
-git clone -c http.sslVerify=false $_URL : clone un dépôt distant distant sans vérification du certificat
-git pull --rebase=preserve              : rècupère la version distante et merge avec la locale
+git clone -c http.sslVerify=false $_URL : clone un dépôt distant sans vérification du certificat
+git pull --rebase=preserve              : rècupère la version distante et fusionne avec la version locale
 
 Créer une nouvelle branche locale et l'envoyer
 git checkout -b dev
