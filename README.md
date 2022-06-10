@@ -149,6 +149,14 @@ git clone $_URL                         : clone un dépôt distant localement
 git clone -c http.sslVerify=false $_URL : clone un dépôt distant distant sans vérification du certificat
 git pull --rebase=preserve              : rècupère la version distante et merge avec la locale
 
+Créer une nouvelle branche locale et l'envoyer
+git checkout -b dev
+git push origin dev
+
+Supprimer une branche locale et à distance
+git checkout master
+git push -d origin dev
+
 Modifier le nom de la branche locale (main en master) :
 git branch -m main master
 git fetch origin
