@@ -222,11 +222,11 @@ git remote set-head origin -a
 
 GIT QUICK SETUP after creation of a new repository
 
-''Clonage direct depuis git@github.com:nik-hub/media99.git''
+**Clonage direct depuis git@github.com:nik-hub/media99.git**
 
 OU
 
-''Create a new repository on the command line''
+**Create a new repository on the command line**
 
 ```bash
 echo "# media99" >> README.md
@@ -240,7 +240,7 @@ git push -u origin main
 
 OU
 
-''push an existing repository from the command line''
+**push an existing repository from the command line**
 
 ```bash
 git remote add origin git@github.com:nik-hub/media99.git
