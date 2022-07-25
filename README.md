@@ -229,7 +229,7 @@ OU
 **Create a new repository on the command line**
 
 ```bash
-echo "# media99" >> README.md
+echo "# My project" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
