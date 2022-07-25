@@ -217,3 +217,33 @@ git remote set-head origin -a
 ## 6. Gestion de projets
 
 > https://services.renater.fr/sourcesup/formation/chap04
+
+## 7. Rappel suite à la création d'un nouveau référentiel vide sur GitHub
+
+GIT QUICK SETUP after creation of a new repository
+
+''Clonage direct depuis git@github.com:nik-hub/media99.git''
+
+OU
+
+''Create a new repository on the command line''
+
+```bash
+echo "# media99" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:nik-hub/media99.git
+git push -u origin main
+```
+
+OU
+
+''push an existing repository from the command line''
+
+```bash
+git remote add origin git@github.com:nik-hub/media99.git
+git branch -M main
+git push -u origin main
+```
