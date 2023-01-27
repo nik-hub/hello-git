@@ -244,6 +244,42 @@ diff --stage
 # Le --no-renames ordonne à Git de ne pas considérer les contenus identiques comme des renommages de fichier, mais de conserver les fichiers distincts
 diff --stage --no-renames
 
+# Validation - commit
+# Ajout des fichiers modifiés pour validation, à l'état STAGED
+git add .
+git add filename
+# Validation des modifications
+git commit -m "Initial commit"
+# All In One : le -a effectue d'abord un add de toutes les modifications en cours, puis le commit, c'est un raccourci
+git commit -a -m "Initial commit"
+
+# Historique des modifications en local
+git log
+git log -1
+git log --oneline
+git log -1 --stat   # détails du dernier commit
+git log -1 --patch  # détails du dernier commit avec le diff des modifs des fichiers
+
+# Supprimer un fichier de git
+git rm filename # supprime aussi du filesystem (status : deleted)
+git rm --cached filename # ne supprime pas le fichier réel (status : untracked)
+
+# git stash : permet de conserver le travail en cours sur une branche, tout en laissant la possibilité de quitter cette branche et de rebasculer sur une autre (sans souci de conflit, merge...)
+Ce qui est stocké en cache n'impacte pas les autres branches, et on revient à ses modifs en cours via des options
+git stash
+git stash save "Description pour s'y retrouver"
+git stash list
+git stash show
+
+
+# Regrouper des commits
+# Après plusieurs commits réalisés sur une ou plusieurs branches, il est possible de les annuler tout en conservant les modifications
+git reset --soft  commitID  # Retour arrière d'un état du repository au niveau staging (post add)
+git reset --mixed commitID  # Retour arrière au niveau répertoire de travail (working, avant add)
+# Et ensuite d'effectuer un nouveau commit regroupant toutes les modifications
+# OU ALORS de faire un retour arrière complet
+git reset --hard commitID   # Retour arrière avec suppression, les modifs sont abandonnées et supprimées
+
 ```
 
 ## 7. Rappel suite à la création d'un nouveau référentiel vide sur GitHub
