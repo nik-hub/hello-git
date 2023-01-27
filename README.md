@@ -218,6 +218,34 @@ git remote set-head origin -a
 
 > https://services.renater.fr/sourcesup/formation/chap04
 
+### a. Commandes de travail
+```bash
+# Revenir à l'état d'un commit précédent (pour repartir d'un historique si les livraisons ultérieures ont entrainé un bug par ex.)
+git checkout commitID
+
+# Créer une branche dérivée (pour une version différente de l'appli - premium, ... -
+git branch premium
+
+# Passer d'une branche à l'autre
+git switch premium
+git switch main
+
+# Rappartier les correctifs de bugs communs depuis main vers la version premium
+git switch premium
+git merge main
+
+# Etat des développements - git diff
+# 1. git diff
+# diff seul permet d'obtenir l'historique des modifications en cours dans le répertoire de travail, avant de faire un add
+git diff
+# 2. git diff --stage
+# Compare le repo avec les derniers fichiers ajoutés au prochain commit (après add, pas encore commit)
+diff --stage
+# Le --no-renames ordonne à Git de ne pas considérer les contenus identiques comme des renommages de fichier, mais de conserver les fichiers distincts
+diff --stage --no-renames
+
+```
+
 ## 7. Rappel suite à la création d'un nouveau référentiel vide sur GitHub
 
 GIT QUICK SETUP after creation of a new repository
