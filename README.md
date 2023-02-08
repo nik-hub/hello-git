@@ -153,6 +153,12 @@ git clone $_URL                         : clone un dépôt distant localement
 git clone -c http.sslVerify=false $_URL : clone un dépôt distant sans vérification du certificat
 git pull --rebase=preserve              : rècupère la version distante et fusionne avec la version locale
 
+# Clonage léger, sans historique ou en limitant l'historique
+git clone --depth 1 <remote_repo_url>
+git clone --depth 3 <remote_repo_url>  # Sur les 3 derniers commits
+# Pour récupérer ultérieurement l'historique
+git fetch --unshallow
+
 Créer une nouvelle branche locale et l'envoyer
 git checkout -b dev
 git push origin dev
