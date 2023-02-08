@@ -104,6 +104,17 @@ function getbranch () {
 
 export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;35m\]\w \$(getbranch)\$\[\033[00m\]"
 ```
+**En PowerShell :-)**
+```ps
+function prompt {
+  Write-Host ("PS " + $(pwd) + " [" + $(git symbolic-ref HEAD --short) + "]>") -nonewline -foregroundcolor White
+  return " "
+}
+function prompt {
+  $ESC = [char]27
+  "PS $(pwd) [$ESC[33m$(git symbolic-ref HEAD --short)$ESC[0m] >"
+}
+```
 
 > Quelques URL pour la gestion des couleurs sous Linux : \
 > https://linuxhint.com/ls_colors_bash/ \
@@ -214,6 +225,16 @@ git branch -u origin/master master
 git remote set-head origin -a
 ```
 
+### d. Mode d'affichage
+```bash
+# Affichage graphique de l'arbre des commits
+# Alias pratique : git tree
+$ git config --global alias.tree 'log --oneline --graph --decorate --all'
+# Check alias
+$ git config --global alias.tree
+# Test alias
+$ git tree
+
 ## 6. Gestion de projets
 
 > https://services.renater.fr/sourcesup/formation/chap04
@@ -227,8 +248,8 @@ git checkout commitID
 git branch premium
 
 # Passer d'une branche à l'autre
-git switch premium
-git switch main
+git switch/checkout premium
+git switch/checkout main
 
 # Rappartier les correctifs de bugs communs depuis main vers la version premium
 git switch premium
@@ -259,6 +280,8 @@ git log -1
 git log --oneline
 git log -1 --stat   # détails du dernier commit
 git log -1 --patch  # détails du dernier commit avec le diff des modifs des fichiers
+# Un petit alias Powershell ;-)
+function glo { git log --oneline }
 
 # Supprimer un fichier de git
 git rm filename # supprime aussi du filesystem (status : deleted)
@@ -270,7 +293,6 @@ git stash
 git stash save "Description pour s'y retrouver"
 git stash list
 git stash show
-
 
 # Regrouper des commits
 # Après plusieurs commits réalisés sur une ou plusieurs branches, il est possible de les annuler tout en conservant les modifications
