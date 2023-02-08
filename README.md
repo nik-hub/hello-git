@@ -106,14 +106,7 @@ export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]
 ```
 **En PowerShell :-)**
 ```ps
-function prompt {
-  Write-Host ("PS " + $(pwd) + " [" + $(git symbolic-ref HEAD --short) + "]>") -nonewline -foregroundcolor White
-  return " "
-}
-function prompt {
-  $ESC = [char]27
-  "PS $(pwd) [$ESC[33m$(git symbolic-ref HEAD --short)$ESC[0m] >"
-}
+function prompt { "PS $(pwd) [$(git symbolic-ref HEAD --short)] >" }
 ```
 
 > Quelques URL pour la gestion des couleurs sous Linux : \
@@ -234,6 +227,13 @@ $ git config --global alias.tree 'log --oneline --graph --decorate --all'
 $ git config --global alias.tree
 # Test alias
 $ git tree
+# Les 3 derniers commits
+$ git tree -3
+
+# On peut aussi l'ajouter au ./.gitconfig
+[alias]
+        tree = log --oneline --graph --decorate --all
+```
 
 ## 6. Gestion de projets
 
