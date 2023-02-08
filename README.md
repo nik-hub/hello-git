@@ -279,6 +279,8 @@ git add filename
 git commit -m "Initial commit"
 # All In One : le -a effectue d'abord un add de toutes les modifications en cours, puis le commit, c'est un raccourci
 git commit -a -m "Initial commit"
+# Corriger le message du dernier commit
+git commit --amend -m "New message"
 
 # Historique des modifications en local
 git log
