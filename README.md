@@ -39,6 +39,20 @@ export https_proxy=http://user:passwd@ip:port/
 
 ## 3. Configuration des clés SSH
 
+> ATTENTION - JENKINS
+
+Attention avec Jenkins, veillez bien à créer le jeu de clés SSH au niveau du home du compte qui exécute jenkins.war sur le serveur Jenkins !
+Et attention, ce n'est obligatoirement sous /home/jenkins, mais cela peut être /var/lib/jenkins.
+Pour être certain du home du compte exécuteur du jenkins.war :
+
+```bash
+ps -ef | grep jenkins.war
+sudo su - compte_jenkins
+pwd
+```
+C'est là qu'il faut créer le rértoire .ssh et les clés, dont la publique sera à recopier sur GitHub, et la privée sera utilisée dans les Credentials de Jenkins.
+
+
 > Objet : automatiser et sécuriser l'autentification à GitHub via SSH
 ```bash
 $ cd && mkdir -m 700 .ssh && cd .ssh
