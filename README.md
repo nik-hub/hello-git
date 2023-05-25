@@ -116,6 +116,7 @@ function getbranch () {
 	fi
 }
 
+# Les codes étranges c'est pour la colorisation de la ligne
 export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;35m\]\w \$(getbranch)\$\[\033[00m\]"
 ```
 **En PowerShell :-)**
@@ -133,12 +134,12 @@ function prompt { "PS $(pwd) [$(git symbolic-ref HEAD --short)] >" }
 
 ### a. Command line instructions
 ```
-Git global setup
+# Git global setup
 
 git config --global user.name "My Name"
 git config --global user.email "my.name@foo.fr"
 
-Create a new repository
+# Create a new repository
 
 git clone ssh://git@gitlab.mongitlab.fr:922/groupe/projet.git
 cd images-docker
@@ -147,7 +148,7 @@ git add README.md
 git commit -m "add README"
 git push -u origin master
 
-Existing folder
+# Existing folder
 
 cd existing_folder
 git init
@@ -156,7 +157,7 @@ git add .
 git commit -m "Initial commit"
 git push -u origin master
 
-Existing Git repository
+# Existing Git repository
 
 cd existing_repo
 git remote add origin ssh://git@gitlab.mongitlab.fr:922/groupe/projet.git
@@ -168,32 +169,35 @@ git clone -c http.sslVerify=false $_URL : clone un dépôt distant sans vérific
 git pull --rebase=preserve              : rècupère la version distante et fusionne avec la version locale
 
 # Clonage léger, sans historique ou en limitant l'historique
+
 git clone --depth 1 <remote_repo_url>
 git clone --depth 3 <remote_repo_url>  # Sur les 3 derniers commits
 # Pour récupérer ultérieurement l'historique
 git fetch --unshallow
 
-Créer une nouvelle branche locale et l'envoyer
+# Les branches
+
+# Créer une nouvelle branche locale et l'envoyer
 git checkout -b dev
 git push origin dev
 
-Supprimer une branche locale et à distance
+# Supprimer une branche locale et à distance
 git checkout master
 git push -d origin dev
 
-Modifier le nom de la branche locale (main en master) :
+# Modifier le nom de la branche locale (main en master) :
 git branch -m main master
 git fetch origin
 git branch -u origin/master master
 git remote set-head origin -a
 
-Savoir quelle branche est la plus avancée :
+# Savoir quelle branche est la plus avancée :
 # ordre descendant
 git branch --sort=-committerdate
 # ordre ascendant
 git branch --sort=committerdate
 
-Savoir si la branche locale est en déphasage par rapport au dépôt distant
+# Savoir si la branche locale est en déphasage par rapport au dépôt distant
 # Si origin/master est la branche distante
 git fetch origin/master
 # Pour connaître le nombre de commits en retard sur le repo local (info non verbeuse)
@@ -205,13 +209,14 @@ git cherry origin/master master
 # Pour connaître le détail
 git diff master origin/master
 
-Partager un dépot local en le liant au dépot distant
+# Partager un dépot local en le liant au dépot distant
 git branch --set-upstream-to=origin/master master
 git pull
 git checkout dev
 git branch --set-upstream-to=origin/dev dev
 
-Gestion des tags
+# Gestion des tags
+
 # Listing
 git tag
 git tag -l "v1.*"
@@ -267,15 +272,16 @@ git checkout commitID
 # Créer une branche dérivée (pour une version différente de l'appli - premium, ... -
 git branch premium
 
-# Passer d'une branche à l'autre
-git switch/checkout premium
-git switch/checkout main
+# Passer d'une branche à l'autre (checkout est obsolète, préférer switch)
+git switch premium
+git switch main
 
-# Rappartier les correctifs de bugs communs depuis main vers la version premium
+# Rappatrier les correctifs de bugs communs depuis main vers la version premium
 git switch premium
 git merge main
 
 # Etat des développements - git diff
+
 # 1. git diff
 # diff seul permet d'obtenir l'historique des modifications en cours dans le répertoire de travail, avant de faire un add
 git diff
@@ -286,6 +292,7 @@ diff --stage
 diff --stage --no-renames
 
 # Validation - commit
+
 # Ajout des fichiers modifiés pour validation, à l'état STAGED
 git add .
 git add filename
@@ -297,6 +304,7 @@ git commit -a -m "Initial commit"
 git commit --amend -m "New message"
 
 # Historique des modifications en local
+
 git log
 git log -1
 git log --oneline
@@ -309,6 +317,8 @@ function glo { git log --oneline }
 git rm filename # supprime aussi du filesystem (status : deleted)
 git rm --cached filename # ne supprime pas le fichier réel (status : untracked)
 
+# stash
+
 # git stash : permet de conserver le travail en cours sur une branche, tout en laissant la possibilité de quitter cette branche et de rebasculer sur une autre (sans souci de conflit, merge...)
 Ce qui est stocké en cache n'impacte pas les autres branches, et on revient à ses modifs en cours via des options
 git stash
@@ -317,13 +327,13 @@ git stash list
 git stash show
 
 # Regrouper des commits
+
 # Après plusieurs commits réalisés sur une ou plusieurs branches, il est possible de les annuler tout en conservant les modifications
 git reset --soft  commitID  # Retour arrière d'un état du repository au niveau staging (post add)
 git reset --mixed commitID  # Retour arrière au niveau répertoire de travail (working, avant add)
 # Et ensuite d'effectuer un nouveau commit regroupant toutes les modifications
 # OU ALORS de faire un retour arrière complet
 git reset --hard commitID   # Retour arrière avec suppression, les modifs sont abandonnées et supprimées
-
 ```
 
 ## 7. Rappel suite à la création d'un nouveau référentiel vide sur GitHub
