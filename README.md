@@ -39,6 +39,15 @@ export https_proxy=http://user:passwd@ip:port/
 
 ## 3. Configuration des clés SSH
 
+> Depuis mars 2023 - Warning: the ECDSA host key for 'github.com'
+
+GitHub a mis à jour sa politique de gestion des clés ecdsa et rsa.
+Il faut compléter le known_hosts avec les bonnes clés directement depuis GitHub via la commande :
+
+```bash
+curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> ~/.ssh/known_hosts
+```
+
 > ATTENTION - JENKINS
 
 Attention avec Jenkins, veillez bien à créer le jeu de clés SSH au niveau du home du compte qui exécute jenkins.war sur le serveur Jenkins !
