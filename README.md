@@ -312,6 +312,9 @@ git commit -a -m "Initial commit"
 # Corriger le message du dernier commit
 git commit --amend -m "New message"
 
+# Annuler le dernier commit
+git reset --soft HEAD~1
+
 # Historique des modifications en local
 
 git log
